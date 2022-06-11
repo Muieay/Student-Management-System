@@ -6,72 +6,68 @@ import com.zyc.service.StuService;
 
 public class StuSystem {
 	public static void main(String[] args) {
-		System.out.println("**********»¶Ó­½øÈëÑ§Éú¹ÜÀíÏµÍ³*********");
-		System.out.println("\t1¡¢²éÑ¯ËùÓĞÑ§Éú");
-		System.out.println("\t2¡¢²éÑ¯µ¥¸öÑ§Éú");
-		System.out.println("\t3¡¢Ìí¼ÓÑ§Éú");
-		System.out.println("\t4¡¢ĞŞ¸ÄÑ§Éú");
-		System.out.println("\t5¡¢É¾³ıÑ§Éú");
-		System.out.println("\t6¡¢ÍË³ö");
+		System.out.println("**********æ¬¢è¿è¿›å…¥å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ*********");
+		System.out.println("\t1ã€æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿ");
+		System.out.println("\t2ã€æŸ¥è¯¢å•ä¸ªå­¦ç”Ÿ");
+		System.out.println("\t3ã€æ·»åŠ å­¦ç”Ÿ");
+		System.out.println("\t4ã€ä¿®æ”¹å­¦ç”Ÿ");
+		System.out.println("\t5ã€åˆ é™¤å­¦ç”Ÿ");
+		System.out.println("\t6ã€é€€å‡º");
 		System.out.println("**********************************");
 		Scanner sc = new Scanner(System.in);
 		int flag = -1;
 		try {
 			while (flag != 0 && flag != 6) {
-				System.out.println("ÇëÊäÈëÒªÖ´ĞĞµÄĞòºÅ£º");
+				System.out.println("è¯·è¾“å…¥è¦æ‰§è¡Œçš„åºå·ï¼š");
 				flag = sc.nextInt();
 				caozuo(flag);
 			}
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ÄúµÄÊäÈëÓĞÎó£¡");
+			System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼");
 		}
 		sc.close();
 	}
 
-//	NoSuchElementException£ºÃ»ÓĞÕâÑùµÄÔªËØÒì³£¡£
-//	Õâ¸öÒì³£Ó¦¸ÃÊÇËµ¶¨Î»²»µ½ÕâÑùµÄÔªËØ£¬Ò²¾ÍÊÇÕÒ²»µ½ÕâÑùµÄÔªËØ¡£
-//	ÎÊÌâ1
-//	ÔÚÎÒµÄ¶à´Înew ScannerºÍcloseÉÏ£¬ÉÏÒ»¸ö·½·¨°ÑScanner ¸øcloseÁË£¬ÏÂÒ»¸ö·½·¨ÖĞµÄnewÓ¦¸ÃÊÇÃ»ÓĞÖ´ĞĞ£¬»òÕßÊÇÖ´ĞĞÁËµ«Á¢Âí¹Ø±ÕÁË£¬
-//	ÓÚÊÇµ¼ÖÂ½ÓÏÂÀ´µÄin.nextInt();ÕÒ²»µ½in£¬µ«ÔÚ±àÒëÖĞÒòÎªÎÒÈ·ÊµnewÁËÒ»¸öScanner£¬ËùÒÔÔÚ±àÒëÊ±Ã»ÓĞ±¨´í£¬µ«ÔËĞĞÊ±³öÁËÎÊÌâ¡£
-//
-//	½â¾ö·½·¨1
-//	±£Áô×îºóÒ»¸öclose£¬ÆäËûµÄÉ¾µô
+	
+//	NoSuchElementExceptionï¼šæ²¡æœ‰è¿™æ ·çš„å…ƒç´ å¼‚å¸¸ã€‚
+//	è§£å†³æ–¹æ³•	
+//	ä¿ç•™æœ€åä¸€ä¸ªcloseï¼Œå…¶ä»–çš„åˆ æ‰
 
 	
 	
 	public static StuService ser = new StuService();
 
-//	Ôö
+//	å¢
 	static void addstu() {
 		Student stu = new Student();
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
 		try {
-			System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄĞÕÃû:");
+			System.out.println("è¯·è¾“å…¥è¦æ·»åŠ çš„å§“å:");
 			stu.setName(sc.nextLine());
-			System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄĞÔ±ğ:");
+			System.out.println("è¯·è¾“å…¥è¦æ·»åŠ çš„æ€§åˆ«:");
 			stu.setSex(sc.nextLine());
-			System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄÄêÁä:");
+			System.out.println("è¯·è¾“å…¥è¦æ·»åŠ çš„å¹´é¾„:");
 			stu.setAge(sc2.nextInt());
-			System.out.println("ÇëÊäÈëÒªÌí¼ÓµÄµç»°:");
+			System.out.println("è¯·è¾“å…¥è¦æ·»åŠ çš„ç”µè¯:");
 			stu.setPhone(sc.nextLine());
 			ser.addStu(stu);
 
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ÄúµÄÊäÈëÓĞÎó£¡");
+			System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼");
 		} finally {
 //			sc.close();
 //			sc2.close();
 		}
 	}
 
-//	É¾
+//	åˆ 
 	static void delstu() {
 		Scanner sc = new Scanner(System.in);
 		try {
-			System.out.println("ÇëÊäÈëÒªÉ¾³ıÑ§ÉúµÄid»òĞÕÃû£º");
+			System.out.println("è¯·è¾“å…¥è¦åˆ é™¤å­¦ç”Ÿçš„idæˆ–å§“åï¼š");
 			if (sc.hasNextInt()) {
 
 				Object oj = sc.next();
@@ -84,17 +80,17 @@ public class StuSystem {
 
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ÄúµÄÊäÈëÓĞÎó£¡");
+			System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼");
 		} finally {
 //			sc.close();
 		}
 	}
 
-//	¸Ä
+//	æ”¹
 	static void updatestu() {
 		Scanner sc = new Scanner(System.in);
 		try {
-			System.out.println("ÇëÊäÈëÒªĞŞ¸ÄÑ§ÉúµÄid»òĞÕÃû£º");
+			System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹å­¦ç”Ÿçš„idæˆ–å§“åï¼š");
 			if (sc.hasNextInt()) {
 
 				Object oj = sc.next();
@@ -106,16 +102,16 @@ public class StuSystem {
 			}
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ÄúµÄÊäÈëÓĞÎó£¡");
+			System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼");
 		} finally {
 //			sc.close();
 		}
 
 	}
 
-//	²é
+//	æŸ¥
 	static void kuangjia() {
-		System.out.println("ID" + "\t" + "ĞÕÃû" + "\t" + "ĞÔ±ğ" + "\t" + "ÄêÁä" + "\t" + "µç»°ºÅÂë");
+		System.out.println("ID" + "\t" + "å§“å" + "\t" + "æ€§åˆ«" + "\t" + "å¹´é¾„" + "\t" + "ç”µè¯å·ç ");
 	}
 
 	static void findAllstu() {
@@ -126,7 +122,7 @@ public class StuSystem {
 	static void findstu() {
 		Scanner sc = new Scanner(System.in);
 		try {
-			System.out.println("ÇëÊäÈëÒª²éÑ¯Ñ§ÉúµÄid»òĞÕÃû£º");
+			System.out.println("è¯·è¾“å…¥è¦æŸ¥è¯¢å­¦ç”Ÿçš„idæˆ–å§“åï¼š");
 
 			if (sc.hasNextInt()) {
 
@@ -142,7 +138,7 @@ public class StuSystem {
 			}
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ÄúµÄÊäÈëÓĞÎó£¡");
+			System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼");
 		} finally {
 //			sc.close();
 		}
@@ -160,10 +156,10 @@ public class StuSystem {
 		} else if (flag == 5) {
 			delstu();
 		} else if (flag == 6 || flag == 0) {
-			System.out.println("¸ĞĞ»Ê¹ÓÃ£¡");
+			System.out.println("æ„Ÿè°¢ä½¿ç”¨ï¼");
 			return;
 		} else {
-			System.out.println("ÄúÊäÈëµÄĞòºÅ²»´æÔÚ£¬ÇëÖØĞÂÊäÈë£¡");
+			System.out.println("æ‚¨è¾“å…¥çš„åºå·ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ï¼");
 		}
 	}
 
