@@ -9,16 +9,16 @@ public class Basic {
 	private String driver="com.mysql.cj.jdbc.Driver";
 	private String url="jdbc:mysql://127.0.0.1:3306/student?serverTimezone=GMT%2B8&useSSL=false";
 	private String username="root";
-	private String password="000000";
+	private String password="123456";
 	public Connection getConn() {
 		Connection conn=null;
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url, username, password);
-//			System.out.println("Êı¾İ¿âÁ¬½Ó³É¹¦£¡");
+//			System.out.println("æ•°æ®åº“è¿æ¥æˆåŠŸï¼");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Êı¾İ¿âÁ¬½ÓÊ§°Ü£¡");
+			System.out.println("æ•°æ®åº“è¿æ¥å¤±è´¥ï¼");
 		}
 		return conn;
 	}
@@ -36,7 +36,7 @@ public class Basic {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("×ÊÔ´ÊÍ·ÅÊ§°Ü£¡");
+			System.out.println("èµ„æºé‡Šæ”¾å¤±è´¥ï¼");
 		}
 	}
 
