@@ -8,72 +8,81 @@ import com.zyc.entity.Student;
 public class StuService {
 	private StuDao stuDao=new StuDao();
 	/**
-	 * @¹¦ÄÜ£ºÌí¼ÓÒ»¸öÑ§Éú
-	 * @²ÎÊı£ºÒ»¸öÑ§Éú¶ÔÏó
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æ·»åŠ ä¸€ä¸ªå­¦ç”Ÿ
+	*å‚æ•°:å­¦ç”Ÿ
+	*/
 	public void addStu(Student stu) {
 		stuDao.addStu(stu);
 	}
 	/**
-	 * @¹¦ÄÜ£ºÉ¾³ıÒ»¸öÑ§Éú
-	 * @²ÎÊı£ºÒ»¸öÑ§Éúid
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿ
+	*å‚æ•°:å­¦ç”Ÿid
+	*/
 	public void delStu(int id) {
 		stuDao.delStu(id);
 	}
 	/**
-	 * @¹¦ÄÜ£ºÉ¾³ıÒ»¸öÑ§Éú
-	 * @²ÎÊı£ºÒ»¸öÑ§ÉúĞÕÃû
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿ
+	*å‚æ•°:å­¦ç”Ÿå§“å
+	*/
 	public void delStu(String name) {
 		stuDao.delStu(name);
 	}
 	
 	
 	/**
-	 * @¹¦ÄÜ£ºĞŞ¸ÄÑ§ÉúĞÅÏ¢
-	 * @²ÎÊı£ºÒ»¸öÑ§Éúid
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:å­¦ç”Ÿid
+	*/
 	public void updateStu(int id) {
 		stuDao.updateStu(id);
 	}
 	
 	
+	
 	/**
-	 * @¹¦ÄÜ£ºĞŞ¸ÄÑ§ÉúĞÅÏ¢
-	 * @²ÎÊı£ºÒ»¸öÑ§ÉúĞÕÃû
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:å­¦ç”Ÿå§“å
+	*/
 	public void updateStu(String name) {
 		stuDao.updateStu(name);
 	}
-	
 	/**
-	 * @¹¦ÄÜ£º²éÑ¯ËùÓĞÑ§ÉúĞÅÏ¢ 
-	 * @²ÎÊı£ºÎŞ
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:æ— 
+	*/
 	public List<Student> selectAll(){
 		return stuDao.selectAll();			
 	}
 	
 	/**
-	 * @¹¦ÄÜ£º²éÑ¯ËùÓĞÑ§ÉúĞÅÏ¢ 
-	 * @²ÎÊı£ºÎŞ
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:æ— 
+	*/
 	public void findAllStu() {
 		stuDao.findAllStu();
 	}
 	
 	/**
-	 * @¹¦ÄÜ£º¸ù¾İÑ§Éúid²éÑ¯
-	 * @²ÎÊı£ºid
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:ä¸€ä¸ªå­¦ç”Ÿid
+	*/
 	public void findStu(int id) {
 		stuDao.findStu(id);
 	}
 	/**
-	 * @¹¦ÄÜ£º¸ù¾İÑ§ÉúĞÕÃû²éÑ¯
-	 * @²ÎÊı£ºĞÕÃû
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:ä¸€ä¸ªå­¦ç”Ÿå§“å
+	*/
 	public void findStu(String name) {
 		stuDao.findStu(name);
 	}
