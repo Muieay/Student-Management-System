@@ -15,7 +15,7 @@ public class Basic {
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url, username, password);
-//			System.out.println("数据库连接成功");
+//			System.out.println("数据库连接成功！");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("数据库连接失败!");
