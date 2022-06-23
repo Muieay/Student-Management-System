@@ -12,32 +12,33 @@ import com.zyc.entity.Student;
 
 public class StuDao extends Basic {
 	/**
-	 * @¹¦ÄÜ£ºÌí¼ÓÒ»¸öÑ§Éú
-	 * @²ÎÊı£ºÒ»¸öÑ§Éú¶ÔÏó
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æ·»åŠ ä¸€ä¸ªå­¦ç”Ÿ
+	*å‚æ•°:å­¦ç”Ÿ
+	*/
 	public void addStu(Student stu) {
-		// 1¡¢¹¹½¨sqlÓïÑÔ
+		// 1ã€æ„å»ºsqlè¯­è¨€
 		String sql = "INSERT INTO stu2 VALUES(NULL,?,?,?,?)";
-		// 2¡¢ÉùÃ÷Êı¾İ¿âÁ¬½Ó¶ÔÏó
+		// 2ã€å£°æ˜æ•°æ®åº“è¿æ¥å¯¹è±¡
 		Connection conn = null;
-		// 3¡¢ÉùÃ÷²éÑ¯·ÖÎöÆ÷¶ÔÏó
+		// 3ã€å£°æ˜æŸ¥è¯¢åˆ†æå™¨å¯¹è±¡
 		PreparedStatement pstm = null;
 		try {
-			// 4¡¢»ñÈ¡Êı¾İ¿âÁ¬½Ó¶ÔÏó
+			// 4ã€è·å–æ•°æ®åº“è¿æ¥å¯¹è±¡
 			conn = getConn();
-			// 5¡¢»ñÈ¡µ½²éÑ¯·ÖÎöÆ÷
+			// 5ã€è·å–åˆ°æŸ¥è¯¢åˆ†æå™¨
 			pstm = conn.prepareStatement(sql);
-			// 6¡¢ÍêÉÆsqlÓï¾ä
+			// 6ã€å®Œå–„sqlè¯­å¥
 			pstm.setString(1, stu.getName());
 			pstm.setString(2, stu.getSex());
 			pstm.setInt(3, stu.getAge());
 			pstm.setString(4, stu.getPhone());
-			// 7¡¢Ö´ĞĞsqlÓï¾ä
+			// 7ã€æ‰§è¡Œsqlè¯­å¥
 			pstm.executeUpdate();
-			System.out.println("Ñ§ÉúÌí¼Ó³É¹¦!");
+			System.out.println("å­¦ç”Ÿæ·»åŠ æˆåŠŸ!");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Ìí¼ÓÑ§ÉúÊ§°Ü£¡");
+			System.out.println("æ·»åŠ å­¦ç”Ÿå¤±è´¥ï¼");
 		} finally {
 			closeAll(null, pstm, conn);
 		}
@@ -45,9 +46,10 @@ public class StuDao extends Basic {
 	}
 
 	/**
-	 * @¹¦ÄÜ£ºÉ¾³ıÒ»¸öÑ§Éú
-	 * @²ÎÊı£ºÒ»¸öÑ§Éúid
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿ
+	*å‚æ•°:å­¦ç”Ÿid
+	*/
 	public void delStu(int id) {
 		String sql = "delete from stu2 where id=?";
 		Connection conn = null;
@@ -57,18 +59,19 @@ public class StuDao extends Basic {
 			pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id);
 			pstm.executeUpdate();
-			System.out.println("É¾³ıÑ§Éú³É¹¦£¡");
+			System.out.println("åˆ é™¤å­¦ç”ŸæˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("É¾³ıÑ§ÉúÊ§°Ü£¡");
+			System.out.println("åˆ é™¤å­¦ç”Ÿå¤±è´¥ï¼");
 		} finally {
 			closeAll(null, pstm, conn);
 		}
 	}
 	/**
-	 * @¹¦ÄÜ£ºÉ¾³ıÒ»¸öÑ§Éú
-	 * @²ÎÊı£ºÒ»¸öÑ§ÉúĞÕÃû
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿ
+	*å‚æ•°:å­¦ç”Ÿå§“å
+	*/
 	public void delStu(String name) {
 		String sql = "delete from stu2 where name=?";
 		Connection conn = null;
@@ -78,10 +81,10 @@ public class StuDao extends Basic {
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, name);
 			pstm.executeUpdate();
-			System.out.println("É¾³ıÑ§Éú³É¹¦£¡");
+			System.out.println("åˆ é™¤å­¦ç”ŸæˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("É¾³ıÑ§ÉúÊ§°Ü£¡");
+			System.out.println("åˆ é™¤å­¦ç”Ÿå¤±è´¥ï¼");
 		} finally {
 			closeAll(null, pstm, conn);
 		}
@@ -89,21 +92,22 @@ public class StuDao extends Basic {
 
 
 	/**
-	 * @¹¦ÄÜ£ºĞŞ¸ÄÑ§ÉúĞÅÏ¢
-	 * @²ÎÊı£ºÒ»¸öÑ§Éúid
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:å­¦ç”Ÿid
+	*/
 	public void updateStu(int id) {
 		String sql = "update stu2 set name=?,sex=?,age=?,phone=?where id=?";
 		Student stu = new Student();
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄĞÕÃû:");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å§“å:");
 		stu.setName(sc.nextLine());
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄĞÔ±ğ:");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„æ€§åˆ«:");
 		stu.setSex(sc.nextLine());
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄÄêÁä:");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å¹´é¾„:");
 		stu.setAge(sc2.nextInt());
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄµç»°:");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„ç”µè¯:");
 		stu.setPhone(sc.nextLine());
 
 		Connection conn = null;
@@ -117,10 +121,10 @@ public class StuDao extends Basic {
 			pstm.setString(4, stu.getPhone());
 			pstm.setInt(5, id);
 			pstm.executeUpdate();
-			System.out.println("ĞŞ¸ÄÑ§Éú³É¹¦£¡");
+			System.out.println("ä¿®æ”¹å­¦ç”ŸæˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ĞŞ¸ÄÑ§ÉúÊ§°Ü£¡");
+			System.out.println("ä¿®æ”¹å­¦ç”Ÿå¤±è´¥ï¼");
 		} finally {
 			closeAll(null, pstm, conn);
 //			sc.close();
@@ -130,18 +134,19 @@ public class StuDao extends Basic {
 	}
 
 	/**
-	 * @¹¦ÄÜ£ºĞŞ¸ÄÑ§ÉúĞÅÏ¢
-	 * @²ÎÊı£ºÒ»¸öÑ§ÉúĞÕÃû
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:å­¦ç”Ÿå§“å
+	*/
 	public void updateStu(String name) {
 		String sql = "update stu2 set age=?,phone=?where name=?";
 		Student stu = new Student();
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
 
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄÄêÁä:");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å¹´é¾„:");
 		stu.setAge(sc.nextInt());
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄµç»°:");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„ç”µè¯:");
 		stu.setPhone(sc2.nextLine());
 
 		Connection conn = null;
@@ -154,10 +159,10 @@ public class StuDao extends Basic {
 			pstm.setString(2, stu.getPhone());
 			pstm.setString(3, name);
 			pstm.executeUpdate();
-			System.out.println("ĞŞ¸ÄÑ§Éú³É¹¦£¡");
+			System.out.println("ä¿®æ”¹å­¦ç”ŸæˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("ĞŞ¸ÄÑ§ÉúÊ§°Ü£¡");
+			System.out.println("ä¿®æ”¹å­¦ç”Ÿå¤±è´¥ï¼");
 		} finally {
 			closeAll(null, pstm, conn);
 //			sc.close();
@@ -166,9 +171,10 @@ public class StuDao extends Basic {
 	}
 
 	/**
-	 * @¹¦ÄÜ£º²éÑ¯ËùÓĞÑ§ÉúĞÅÏ¢ 
-	 * @²ÎÊı£ºÎŞ
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°: æ— 
+	*/
 	public List<Student> selectAll() {
 		List<Student> list = new ArrayList<>();
 		String sql = "select * from stu2";
@@ -188,10 +194,10 @@ public class StuDao extends Basic {
 				stu.setPhone(rs.getString("phone"));
 				list.add(stu);
 			}
-			System.out.println("²éÑ¯³É¹¦£¡");
+			System.out.println("æŸ¥è¯¢æˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("²éÑ¯Ê§°Ü£¡");
+			System.out.println("æŸ¥è¯¢å¤±è´¥ï¼");
 		} finally {
 			closeAll(rs, pstm, conn);
 		}
@@ -199,9 +205,10 @@ public class StuDao extends Basic {
 	}
 
 	/**
-	 * @¹¦ÄÜ£º²éÑ¯ËùÓĞÑ§ÉúĞÅÏ¢
-	 * @²ÎÊı£ºÎŞ
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:æ— 
+	*/
 	public void findAllStu() {
 		String sql = "select * from stu2";
 		Connection conn = null;
@@ -211,7 +218,7 @@ public class StuDao extends Basic {
 			conn = getConn();
 			pstm = conn.prepareStatement(sql);
 			rs = pstm.executeQuery();
-			// »ñÈ¡±íµÄÁĞÊı
+			// è·å–è¡¨çš„åˆ—æ•°
 
 			ResultSetMetaData mateData = (ResultSetMetaData) rs.getMetaData();
 			int columnCount = mateData.getColumnCount();
@@ -224,19 +231,20 @@ public class StuDao extends Basic {
 				System.out.println();
 			}
 //			System.out.println(columnCount);
-			System.out.println("²éÑ¯³É¹¦£¡");
+			System.out.println("æŸ¥è¯¢æˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("²éÑ¯Ê§°Ü£¡");
+			System.out.println("æŸ¥è¯¢å¤±è´¥ï¼");
 		} finally {
 			closeAll(rs, pstm, conn);
 		}
 		
 	}
 	/**
-	 * @¹¦ÄÜ£º¸ù¾İÑ§Éúid²éÑ¯
-	 * @²ÎÊı£ºid
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:ä¸€ä¸ªå­¦ç”Ÿid
+	*/
 	public void findStu(int id) {
 		String sql="select * from stu2 where id=?";
 		Connection conn=null;
@@ -257,19 +265,20 @@ public class StuDao extends Basic {
 				}
 			}
 			
-			System.out.println("\n"+"²éÑ¯³É¹¦£¡");
+			System.out.println("\n"+"æŸ¥è¯¢æˆåŠŸï¼");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("²éÑ¯Ê§°Ü£¡");
+			System.out.println("æŸ¥è¯¢å¤±è´¥ï¼");
 			
 		}finally {
 			closeAll(rs, pstm, conn);
 		}
 	}
 	/**
-	 * @¹¦ÄÜ£º¸ù¾İÑ§ÉúĞÕÃû²éÑ¯
-	 * @²ÎÊı£ºĞÕÃû
-	 */
+	*@ä½œè€…:ZYæ¾„
+	*åŠŸèƒ½:æŸ¥è¯¢ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯
+	*å‚æ•°:ä¸€ä¸ªå­¦ç”Ÿå§“å
+	*/
 	public void findStu(String name) {
 		String sql="select * from stu2 where name=?";
 		Connection conn=null;
@@ -290,11 +299,11 @@ public class StuDao extends Basic {
 				}
 			}
 			
-			System.out.println("\n"+"²éÑ¯³É¹¦£¡");
+			System.out.println("\n"+"æŸ¥è¯¢æˆåŠŸï¼");
 
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("²éÑ¯Ê§°Ü£¡");
+			System.out.println("æŸ¥è¯¢å¤±è´¥ï¼");
 		}finally {
 			closeAll(rs, pstm, conn);
 		}
